@@ -1,0 +1,56 @@
+<div class="panel_top">
+	<h2 class="title" data-i18n="PLUGIN_ABOUT/TITLE" data-bind="i18n: 'text'"></h2>
+</div>
+<div class="panel_center">
+	<div class="fields">
+		<div class="fieldset">
+			<div class="hint">
+				<span data-i18n="PLUGIN_ABOUT/DESCRIPTION" data-bind="i18n: 'text'"></span>
+			</div>
+			<div class="row">
+				<br />
+				<a href="http://afterlogic.com" target="_blank"><span data-i18n="PLUGIN_ABOUT/SAMPLE_LINK" data-bind="i18n: 'text'"></span></a>
+				<br />
+				<div data-bind="visible: 0 < count()">
+					<span data-i18n="PLUGIN_ABOUT/BINDING_EXAMPLE" data-bind="i18n: 'text'"></span>:
+					<strong data-bind="text: count"></strong>
+					<br />
+					<br />
+				</div>
+				<div data-bind="visible: '' !== version()">
+					<span data-i18n="PLUGIN_ABOUT/AJAX_RESPONSE" data-bind="i18n: 'text'"></span>:
+					<strong data-bind="text: version"></strong>
+					<br />
+					<br />
+				</div>
+				<div data-bind="visible: '' !== currentID()">
+					<span data-i18n="PLUGIN_ABOUT/LOCAL_DATA" data-bind="i18n: 'text'"></span>: [
+					<br />
+					ID:<span data-bind="text: currentID"></span>,
+					<br />
+					NAME:<span data-bind="text: currentFriendlyName"></span>,
+					<br />
+					EMAIL:<span data-bind="text: currentEmail"></span>
+					<br />
+					]
+					<br />
+					<div data-bind="visible: '' !== currentUserLink()">
+						User Link: <a target="_blank" data-bind="text: currentUserLink, attr: {'href': currentUserLink}"></a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="buttons">
+
+		<span class="button" data-bind="visible: '' === version(), click: getAjaxData"><span 
+			data-i18n="PLUGIN_ABOUT/AJAX_BUTTON" data-bind="i18n: 'text'"></span><span data-bind="visible: version.loading()">...</span></span>
+
+		<span class="button" data-bind="click: clickOtherButtom"><span
+			data-i18n="PLUGIN_ABOUT/OTHER_BUTTON" data-bind="i18n: 'text'"></span></span>
+
+		<span class="button" data-bind="click: clickSampleButtom"><span
+			data-i18n="PLUGIN_ABOUT/SAMPLE_BUTTON" data-bind="i18n: 'text'"></span></span>
+		
+	</div>
+</div>
