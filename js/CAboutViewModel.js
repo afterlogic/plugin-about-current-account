@@ -22,15 +22,15 @@ CAboutViewModel.prototype.TemplateName = 'Plugin_AboutTemplate';
 CAboutViewModel.prototype.TabName = 'about';
 CAboutViewModel.prototype.TabTitle = AfterLogicApi.i18n('PLUGIN_ABOUT/TAB_NAME');
 
-CAboutViewModel.prototype.clickSampleButtom = function ()
+CAboutViewModel.prototype.clickSampleButton = function ()
 {
 	this.count(this.count() + 1);
 };
 
-CAboutViewModel.prototype.clickOtherButtom = function ()
+CAboutViewModel.prototype.clickOtherButton = function ()
 {
-	var mData = AfterLogicApi.getPrimaryAccountData();
-//	var mData = AfterLogicApi.getCurrentAccountData();
+//	var mData = AfterLogicApi.getPrimaryAccountData();
+	var mData = AfterLogicApi.getCurrentAccountData();
 
 	if ('' === this.currentEmail())
 	{
